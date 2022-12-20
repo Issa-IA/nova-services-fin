@@ -46,7 +46,7 @@ class SaleOrderHeritcomerce(models.Model):
                     team_vente = record
             if team_vente:
                 if len(rec.order_line) > 0 and team_vente.crm_team_N_contrat > 0:
-                    rec.sale_N_client = rec.sale_new_contrat / team_vente.crm_team_N_contrat / len(rec.order_line)
+                    rec.sale_N_contrat = rec.sale_new_contrat / team_vente.crm_team_N_contrat / len(rec.order_line)
                     print("Nombre de clients total",
                           rec.sale_new_contact / team_vente.crm_team_N_contrat / len(rec.order_line))
 
