@@ -12,7 +12,7 @@ class Usersinheritequipe(models.Model):
                 if  record.id == 1:
                     team_vente = record
             if team_vente:
-                team_vente.crm_team_chif+=rec.x_studio_chiffre_daffaire
+                team_vente.crm_team_chif=rec.x_studio_chiffre_daffaire
     
 
 class   Crmteamoinhertit(models.Model):
