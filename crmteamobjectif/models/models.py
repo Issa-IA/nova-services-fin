@@ -1,5 +1,8 @@
 from odoo import _, api, fields, models
 
+class Usersinheritequipe(models.Model):
+    _inherit = "res.users"
+    
 
 class   Crmteamoinhertit(models.Model):
     _inherit = "crm.team"
