@@ -1,18 +1,6 @@
 from odoo import _, api, fields, models
 
-class Usersinheritequipe(models.Model):
-    _inherit = "res.users"
-    
-    @api.onchange("x_studio_chiffre_daffaire")
-    def equipe_comercial_chifre_affaire(self):
-        for rec in self:
-            team_vente = False
-            for record in rec.crm_team_ids:
-                id = 1
-                if  record.id == 1:
-                    team_vente = record
-            if team_vente:
-                team_vente.crm_team_chif=rec.x_studio_chiffre_daffaire
+
     
 
 class   Crmteamoinhertit(models.Model):
