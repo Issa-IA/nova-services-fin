@@ -36,7 +36,7 @@ class SaleOrderHeritcomerce(models.Model):
     ########## objectif_total_equipe comerciale
     sale_N_contrat = fields.Float(string="%Nombre de contrats total")
 
-    @api.onchange("sale_materiels_vendu", "sale_new_contrat")
+    @api.onchange("sale_materiels_vendu", "sale_new_contrat","order_line")
     def equipe_comercial_contrat(self):
         for rec in self:
             team_vente = False
@@ -51,7 +51,7 @@ class SaleOrderHeritcomerce(models.Model):
                           rec.sale_new_contact / team_vente.crm_team_N_contrat / len(rec.order_line))
 
     sale_N_client = fields.Float(string="%Nombre de clients total")
-    @api.onchange("sale_materiels_vendu", "sale_new_contact")
+    @api.onchange("sale_materiels_vendu", "sale_new_contact","order_line")
     def equipe_comercial_client(self):
         for rec in self:
             team_vente = False
@@ -65,7 +65,7 @@ class SaleOrderHeritcomerce(models.Model):
                     print("Nombre de clients total", rec.sale_new_contact / team_vente.crm_team_N_client / len(rec.order_line))
 
     sale_comer = fields.Float(string="%Marge comercial total")
-    @api.onchange("sale_materiels_vendu","x_studio_marge_commerciale")
+    @api.onchange("sale_materiels_vendu","x_studio_marge_commerciale","order_line")
     def equipe_comercial_marge(self):
         for rec in self:
             team_vente = False
@@ -79,7 +79,7 @@ class SaleOrderHeritcomerce(models.Model):
                     print("Marge comercial", rec.x_studio_marge_commerciale / team_vente.crm_team_comer / len(rec.order_line))
 
     sale_chifre_aff = fields.Float(string="%Chiffre d'affaire total")
-    @api.onchange("sale_materiels_vendu","sale_finance")
+    @api.onchange("sale_materiels_vendu","sale_finance","order_line")
     def equipe_comercial_chifre(self):
         for rec in self:
             team_vente = False
