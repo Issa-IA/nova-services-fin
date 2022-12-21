@@ -49,6 +49,22 @@ class SaleOrderHeritcomerce(models.Model):
                     rec.sale_N_contrat = rec.sale_new_contrat / team_vente.crm_team_N_contrat / len(rec.order_line)
                     print("Nombre de clients total",
                           rec.sale_new_contact / team_vente.crm_team_N_contrat / len(rec.order_line))
+    
+    sale_contrat_tot = fields.Float(string="%Nbre contrats tot")
+    @api.onchange("sale_materiels_vendu", "sale_new_contrat","order_line")
+    def equipe_comercial_contrat_t(self):
+        for rec in self:
+            team_vente = False
+            for record in rec.user_id.crm_team_ids:
+                id = 1
+                if record.id == 1:
+                    team_vente = record
+            if team_vente:
+                if len(rec.order_line) > 0 and team_vente.crm_team_N_contrat > 0:
+                    rec.sale_contrat_tot = rec.sale_new_contrat / team_vente.crm_team_N_contrat / len(rec.order_line)
+                    print("Nombre de clients total",
+                          rec.sale_new_contact / team_vente.crm_team_N_contrat / len(rec.order_line))
+     
 
     sale_N_client = fields.Float(string="%Nombre de clients total")
     @api.onchange("sale_materiels_vendu", "sale_new_contact","order_line")
@@ -64,6 +80,20 @@ class SaleOrderHeritcomerce(models.Model):
                     rec.sale_N_client = rec.sale_new_contact / team_vente.crm_team_N_client / len(rec.order_line)
                     print("Nombre de clients total", rec.sale_new_contact / team_vente.crm_team_N_client / len(rec.order_line))
 
+    sale_client_tot = fields.Float(string="%Nbre clients tot")
+    @api.onchange("sale_materiels_vendu", "sale_new_contact","order_line")
+    def equipe_comercial_client_t(self):
+        for rec in self:
+            team_vente = False
+            for record in rec.user_id.crm_team_ids:
+                id = 1
+                if record.id == 1:
+                    team_vente = record
+            if team_vente:
+                if len(rec.order_line) > 0 and team_vente.crm_team_N_client > 0:
+                    rec.sale_client_tot = rec.sale_new_contact / team_vente.crm_team_N_client / len(rec.order_line)
+                    print("Nombre de clients total", rec.sale_new_contact / team_vente.crm_team_N_client / len(rec.order_line))
+                    
     sale_comer = fields.Float(string="%Marge comercial total")
     @api.onchange("sale_materiels_vendu","x_studio_marge_commerciale","order_line")
     def equipe_comercial_marge(self):
