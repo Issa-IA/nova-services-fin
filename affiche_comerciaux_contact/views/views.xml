@@ -41,6 +41,15 @@
      </record>
      <menuitem name="RTP" id="list_contact_action_1" parent="contacts.menu_contacts"
       groups="affiche_comerciaux_contact.acces_contact_user"    action="list_contact_day_window_1" sequence="92"/>
+    
+    <record model="ir.actions.act_window" id="list_parc_day_window_1">
+      <field name="name">RTP Matériels</field>
+      <field name="res_model">fleet.vehicle</field>
+      <field name="view_mode">kanban,tree,form</field>
+     </record>
+     <menuitem name="RTP Matériels" id="list_parc_action_1" parent="fleet.menu_root"
+      groups="affiche_comerciaux_contact.acces_contact_user"    action="list_parc_day_window_1" sequence="200"/>
+
 
     <record model="ir.actions.act_window" id="type_Aficher_window">
       <field name="name">Afficher la liste</field>
