@@ -10,6 +10,7 @@ class PartnerModelHeritt(models.Model):
 
 class SaleOrderLineHerit(models.Model):
     _inherit    = 'sale.order.line'
+    price_sale_1 = fields.Monetary(string="Modifier Prix d'achat")
     price_sale = fields.Monetary(string="Prix d'achat", compute="compute_pricesale")
     designation = fields.Char(compute="compute_designation",string="Désignation")
     order_line_serie = fields.Char(string="N° serie",readonly=True)
@@ -29,10 +30,13 @@ class SaleOrderLineHerit(models.Model):
                 rec.designation = False
 
     ####### add new produc
-    @api.depends('product_id')
+    @api.depends("product_id","price_sale_1")
     def compute_pricesale(self):
-        for rec in self:
-            rec.price_sale = rec.product_id.standard_price*rec.product_uom_qty
+        for rec in self:  
+            if rec.price_sale_1>0:
+                rec.price_sale = rec.price_sale_1
+            else:
+                rec.price_sale = rec.product_id.standard_price*rec.product_uom_qty
 
 
 
