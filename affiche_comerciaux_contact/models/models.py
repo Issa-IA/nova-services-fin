@@ -18,6 +18,7 @@ class Aficherlalistecontacts(models.Model):
     @api.onchange("comercial_contact_affiche")
     def onchange_affiche(self):
         print("bonjour tout le monde")
+        your_group_1 = self.env.ref('fleet.fleet_group_manager')
         your_group = self.env.ref('affiche_comerciaux_contact.acces_contact_user')
         users = self.env['res.users'].search([])
         users_Technicien = self.env.ref('droits_d_acces.group_Technicien_contact').users.ids
@@ -30,6 +31,9 @@ class Aficherlalistecontacts(models.Model):
                     your_group.write({
                         'users': [(4, user.id)]
                     })
+                    your_group_1.write({
+                        'users': [(4, user.id)]
+                    })
 
         warning = {'title': _("Contacts"),
                        'message': 'La liste des contacts est disponible pour les commerciaux',
@@ -40,6 +44,7 @@ class Aficherlalistecontacts(models.Model):
     @api.onchange("comercial_contact_retirer")
     def onchange_retirer(self):
         print("bonjour tout le monde")
+        your_group_1 = self.env.ref('fleet.fleet_group_manager')
         your_group = self.env.ref('affiche_comerciaux_contact.acces_contact_user')
         users = self.env['res.users'].search([])
         users_Technicien = self.env.ref('droits_d_acces.group_Technicien_contact').users.ids
@@ -47,6 +52,9 @@ class Aficherlalistecontacts(models.Model):
             if users_Technicien:
                 if user.id in users_Technicien:
                     your_group.write({
+                        'users': [(3, user.id)]
+                    })
+                    your_group_1.write({
                         'users': [(3, user.id)]
                     })
         warning = {
