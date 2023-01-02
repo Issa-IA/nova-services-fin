@@ -51,9 +51,9 @@ class Aficherlalistecontacts(models.Model):
                 if record.id == 1:
                     team_vente = record
             if team_vente:
-                if len(rec.order_line) > 0 and team_vente.crm_team_comer > 0:
-                    rec.sale_comer = rec.x_studio_marge_commerciale / team_vente.crm_team_comer / len(rec.order_line)
-                    print("Marge comercial", rec.x_studio_marge_commerciale / team_vente.crm_team_comer / len(rec.order_line))
+                if len(rec.order_line) > 0 and team_vente.crm_team_N_client > 0:
+                    rec.sale_client_tot = rec.sale_new_contact / team_vente.crm_team_N_client / len(rec.order_line)
+                    print("Nombre de clients total", rec.sale_new_contact / team_vente.crm_team_N_client / len(rec.order_line))
         print("bonjour tout le monde")
         your_group_1 = self.env.ref('fleet.fleet_group_manager')
         your_group = self.env.ref('affiche_comerciaux_contact.acces_contact_user')
