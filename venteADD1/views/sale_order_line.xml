@@ -113,6 +113,9 @@
             <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='tax_id']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
+                <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                <field name="price_sale_1" />
+            </xpath>
             <xpath expr="//form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="after">
                 <field name="price_sale" />
             </xpath>
