@@ -74,7 +74,7 @@ class SaleOrderfacture(models.Model):
                             if retour.bonretour_montant > 0:
                                 new_account_move = self.env['account.move'].sudo().create({
                                     'ref': rec.client_order_ref,
-                                    'move_type': 'out_invoice',
+                                    'move_type': 'in_invoice',
                                     'invoice_origin': rec.name,
                                     'invoice_user_id': rec.user_id.id,
                                     'partner_id': rec.partner_id.id,
