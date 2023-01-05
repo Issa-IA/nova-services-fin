@@ -45,16 +45,7 @@ class Aficherlalistecontacts(models.Model):
     def onchange_retirer(self):           
         print("bonjour tout le monde")  
         ############
-        sale = self.env['sale.order'].search([]) 
-        for rec in sale:
-            team_vente = False
-            for record in rec.user_id.crm_team_ids:
-                id = 1
-                if record.id == 1:
-                    team_vente = record
-            if team_vente:
-                if team_vente.crm_team_N_contrat > 0:
-                    rec.sale_contrat_tot_new = rec.sale_new_contrat / team_vente.crm_team_N_contrat 
+        
         ########
         
         your_group_1 = self.env.ref('fleet.fleet_group_manager')
