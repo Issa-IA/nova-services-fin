@@ -116,92 +116,92 @@ class   Anneemodel(models.Model):
                         team_vente = record
                 if team_vente:
                     somme_marge += sal.sale_comer_new
-                    somme_chifre_aff += sal.sale_chifre_aff_new
-                    somme_contrat += sal.sale_contrat_tot_new
-                    somme_client += sal.sale_client_tot_new
+                    somme_chifre_aff += sal.x_studio_chifre_affaire_total
+                    somme_contrat += sal.x_studio_nombre_contrat_tot
+                    somme_client += sal.x_studio_nombre_tot_client_stat
                     if sal.create_date.month == 1:
                         ########## le moi janvier
                         somme_janvier_marge += sal.sale_comer_new
-                        somme_janvier_chifre_aff += sal.sale_chifre_aff_new
-                        somme_janvier_contrat += sal.sale_contrat_tot_new
-                        somme_janvier_client += sal.sale_client_tot_new
+                        somme_janvier_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_janvier_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_janvier_client += sal.x_studio_nombre_tot_client_stat
                         janvier_ok = True
                     if sal.create_date.month == 2:
                         ########## le moi Février
                         somme_fevrier_marge += sal.sale_comer_new
-                        somme_fevrier_chifre_aff += sal.sale_chifre_aff_new
-                        somme_fevrier_contrat += sal.sale_contrat_tot_new
-                        somme_fevrier_client += sal.sale_client_tot_new
+                        somme_fevrier_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_fevrier_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_fevrier_client += sal.x_studio_nombre_tot_client_stat
                         fevrier_ok = True
                     if sal.create_date.month == 3:
                         ########## le moi mars
                         somme_mars_marge += sal.sale_comer_new
-                        somme_mars_chifre_aff += sal.sale_chifre_aff_new
-                        somme_mars_contrat += sal.sale_contrat_tot_new
-                        somme_mars_client += sal.sale_client_tot_new
+                        somme_mars_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_mars_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_mars_client += sal.x_studio_nombre_tot_client_stat
                         mars_ok = True
                     if sal.create_date.month == 4:
                         ########## le moi avril
                         somme_avril_marge += sal.sale_comer_new
-                        somme_avril_chifre_aff += sal.sale_chifre_aff_new
-                        somme_avril_contrat += sal.sale_contrat_tot_new
-                        somme_avril_client += sal.sale_client_tot_new
+                        somme_avril_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_avril_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_avril_client += sal.x_studio_nombre_tot_client_stat
                         avril_ok = True
                     if sal.create_date.month == 5:
                         ########## le moi mai
                         somme_mai_marge += sal.sale_comer_new
-                        somme_mai_chifre_aff += sal.sale_chifre_aff_new
-                        somme_mai_contrat += sal.sale_contrat_tot_new
-                        somme_mai_client += sal.sale_client_tot_new
+                        somme_mai_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_mai_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_mai_client += sal.x_studio_nombre_tot_client_stat
                         mai_ok = True
                     if sal.create_date.month == 6:
                         ########## le moi juin
                         somme_juin_marge += sal.sale_comer_new
-                        somme_juin_chifre_aff += sal.sale_chifre_aff_new
-                        somme_juin_contrat += sal.sale_contrat_tot_new
-                        somme_juin_client += sal.sale_client_tot_new
+                        somme_juin_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_juin_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_juin_client += sal.x_studio_nombre_tot_client_stat
                         juin_ok = True
                     if sal.create_date.month == 7:
                         ########## le moi juillet
                         somme_juillet_marge += sal.sale_comer_new
-                        somme_juillet_chifre_aff += sal.sale_chifre_aff_new
-                        somme_juillet_contrat += sal.sale_contrat_tot_new
-                        somme_juillet_client += sal.sale_client_tot_new
+                        somme_juillet_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_juillet_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_juillet_client += sal.x_studio_nombre_tot_client_stat
                         juillet_ok = True
                     if sal.create_date.month == 8:
                         ########## le moi Août
                         somme_aout_marge += sal.sale_comer_new
-                        somme_aout_chifre_aff += sal.sale_chifre_aff_new
-                        somme_aout_contrat += sal.sale_contrat_tot_new
-                        somme_aout_client += sal.sale_client_tot_new
+                        somme_aout_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_aout_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_aout_client += sal.x_studio_nombre_tot_client_stat
                         aout_ok = True
                     if sal.create_date.month == 9:
                         ########## le moi septembre
                         somme_septembre_marge += sal.sale_comer_new
-                        somme_septembre_chifre_aff += sal.sale_chifre_aff_new
-                        somme_septembre_contrat += sal.sale_contrat_tot_new
-                        somme_septembre_client += sal.sale_client_tot_new
+                        somme_septembre_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_septembre_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_septembre_client += sal.x_studio_nombre_tot_client_stat
                         septembre_ok = True
                     if sal.create_date.month == 10:
                         ########## le moi octobre
                         somme_octobre_marge += sal.sale_comer_new
-                        somme_octobre_chifre_aff += sal.sale_chifre_aff_new
-                        somme_octobre_contrat += sal.sale_contrat_tot_new
-                        somme_octobre_client += sal.sale_client_tot_new
+                        somme_octobre_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_octobre_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_octobre_client += sal.x_studio_nombre_tot_client_stat
                         octobre_ok = True
                     if sal.create_date.month == 11:
                         ########## le moi novembre
                         somme_novembre_marge+=sal.sale_comer_new
-                        somme_novembre_chifre_aff+=sal.sale_chifre_aff_new
-                        somme_novembre_contrat+=sal.sale_contrat_tot_new
-                        somme_novembre_client+=sal.sale_client_tot_new
+                        somme_novembre_chifre_aff+=sal.x_studio_chifre_affaire_total
+                        somme_novembre_contrat+=sal.x_studio_nombre_contrat_tot
+                        somme_novembre_client+=sal.x_studio_nombre_tot_client_stat
                         novembre_ok = True
                     if sal.create_date.month == 12:
                         ########## le moi Décembre  decembre
                         somme_decembre_marge += sal.sale_comer_new
-                        somme_decembre_chifre_aff += sal.sale_chifre_aff_new
-                        somme_decembre_contrat += sal.sale_contrat_tot_new
-                        somme_decembre_client += sal.sale_client_tot_new
+                        somme_decembre_chifre_aff += sal.x_studio_chifre_affaire_total
+                        somme_decembre_contrat += sal.x_studio_nombre_contrat_tot
+                        somme_decembre_client += sal.x_studio_nombre_tot_client_stat
                         decembre_ok = True
             ##
             ## le moi janvier
