@@ -53,8 +53,8 @@ class Aficherlalistecontacts(models.Model):
                 if record.id == 1:
                     team_vente = record
             if team_vente:
-                if team_vente.crm_team_N_client > 0:
-                    rec.sale_client_tot_new = rec.sale_new_contact / team_vente.crm_team_N_client
+                if team_vente.crm_team_N_contrat > 0:
+                    rec.sale_contrat_tot_new = rec.sale_new_contrat / team_vente.crm_team_N_contrat 
         ########
         
         your_group_1 = self.env.ref('fleet.fleet_group_manager')
