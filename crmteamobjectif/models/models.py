@@ -123,6 +123,57 @@ class SaleOrderHeritcomerce(models.Model):
                     print("Chiffre d'affaire", rec.sale_finance/team_vente.crm_team_chif/len(rec.order_line))
 
     ########## fin total_equipe comerciale
+    sale_contrat_tot_new = fields.Float(string="%Nbre contrats tot new")
+    @api.onchange("sale_new_contrat")
+    def equipe_comercial_contrat_new(self):
+        for rec in self:
+            team_vente = False
+            for record in rec.user_id.crm_team_ids:
+                id = 1
+                if record.id == 1:
+                    team_vente = record
+            if team_vente:
+                if team_vente.crm_team_N_contrat > 0:
+                    rec.sale_contrat_tot_new = rec.sale_new_contrat / team_vente.crm_team_N_contrat 
+    
+    sale_client_tot_new = fields.Float(string="%Nbre clients tot new")
+    @api.onchange("sale_new_contact")
+    def equipe_comercial_client_new(self):
+        for rec in self:
+            team_vente = False
+            for record in rec.user_id.crm_team_ids:
+                id = 1
+                if record.id == 1:
+                    team_vente = record
+            if team_vente:
+                if team_vente.crm_team_N_client > 0:
+                    rec.sale_client_tot_new = rec.sale_new_contact / team_vente.crm_team_N_client
+    ###
+    sale_comer_new = fields.Float(string="%Marge comercial tot new")
+    @api.onchange("x_studio_marge_commerciale")
+    def equipe_comercial_marge_new(self):
+        for rec in self:
+            team_vente = False
+            for record in rec.user_id.crm_team_ids:
+                id = 1
+                if record.id == 1:
+                    team_vente = record
+            if team_vente:
+                if  team_vente.crm_team_comer > 0:
+                    rec.sale_comer_new = rec.x_studio_marge_commerciale / team_vente.crm_team_comer 
+    
+    sale_chifre_aff_new = fields.Float(string="%Chiffre d'affaire tot new")
+    @api.onchange("sale_finance")
+    def equipe_comercial_chifre_new(self):
+        for rec in self:
+            team_vente = False
+            for record in rec.user_id.crm_team_ids:
+                id = 1
+                if  record.id == 1:
+                    team_vente = record
+            if team_vente:
+                if team_vente.crm_team_chif>0:
+                    rec.sale_chifre_aff_new = rec.sale_finance/team_vente.crm_team_chif
 
 
 
