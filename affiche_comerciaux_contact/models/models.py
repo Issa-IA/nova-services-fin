@@ -50,11 +50,11 @@ class Aficherlalistecontacts(models.Model):
             team_vente = False
             for record in rec.user_id.crm_team_ids:
                 id = 1
-                if  record.id == 1:
+                if record.id == 1:
                     team_vente = record
             if team_vente:
-                if team_vente.crm_team_chif>0:
-                    rec.sale_chifre_aff_new = rec.sale_finance/team_vente.crm_team_chif
+                if  team_vente.crm_team_comer > 0:
+                    rec.sale_comer_new = rec.x_studio_marge_commerciale / team_vente.crm_team_comer
         ########
         
         your_group_1 = self.env.ref('fleet.fleet_group_manager')
