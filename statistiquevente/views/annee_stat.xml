@@ -42,7 +42,7 @@
       <field name="res_model">anneevente</field>
       <field name="view_mode">tree,form</field>
   </record>
-  <menuitem name="Statistiques" id="affiche_stat_action" parent="sale.sale_menu_root" groups="droits_d_acces.group_Technicien_contact"
+  <menuitem name="Statistiques" id="affiche_stat_action" parent="sale.sale_menu_root" 
               action="stat_annee_window" sequence="200"/>
 </data>
 </odoo>
