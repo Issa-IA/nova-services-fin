@@ -24,7 +24,7 @@ class   Contactinhertit(models.Model):
                 rec.courriel_facturation_reel = rec.email
     ########################
 
-    par_count = fields.Integer(string="Factures", compute="compute_mat_count")
+    #par_count = fields.Integer(string="Factures", compute="compute_mat_count")
 
     def compute_mat_count(self):
         for rec in self:
