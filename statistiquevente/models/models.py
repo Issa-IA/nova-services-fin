@@ -28,7 +28,7 @@ class   Anneemodel(models.Model):
             date_fin = datetime(year=rec.annee, month=12, day=31)
             d2 = datetime.strftime(date_fin, "%Y-%m-%d %H:%M:%S")
             #sale=self.env['sale.order'].search([('create_date', '&gt;=', date)])
-            sale = self.env['sale.order'].search([('create_date', '>=', d1),('create_date', '<=', d2)])
+            sale = self.env['sale.order'].sudo().search([('create_date', '>=', d1),('create_date', '<=', d2)])
 
             ########## par an
             somme_marge=0
